@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test.only('Handle Multiple Window', async ({browser}) =>
+test('Handle Multiple Window', async ({browser}) =>
 {
 
     const context = await browser.newContext();                                         //it creates new session
@@ -28,6 +28,11 @@ test.only('Handle Multiple Window', async ({browser}) =>
     await searchBox.fill("Shrey");
 
     await newPage.waitForTimeout(2000);
+
+    //now move back to parent page
+    await page.bringToFront();
+
+    console.log(await page.title());
         
 
 

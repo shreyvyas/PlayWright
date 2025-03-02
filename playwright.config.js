@@ -34,6 +34,7 @@ export default defineConfig({
     headless: false,
     trace: 'on-first-retry',
     viewport: null,
+    screenshot: 'on',
     launchOptions: {
       args: ['--start-maximized'], // Start browser in maximized mode
     },
