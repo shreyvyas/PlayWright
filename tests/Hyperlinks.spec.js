@@ -31,6 +31,12 @@ test('Hyperlinks', async ({page}) =>
     const linkText = await links.allTextContents();
     console.log(linkText);
 
+    await page.waitForTimeout(2000);
+
+    //check whether link is enabled
+    const notlink = page.locator("//p[text()=' Non - Clickable ']");
+    console.log(await notlink.isEnabled());
+
 }
 
 
